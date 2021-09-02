@@ -233,7 +233,7 @@ static NSString *const kMaterialActionSheetBundle = @"MaterialActionSheet.bundle
 - (void)viewDidLayoutSubviews {
   [super viewDidLayoutSubviews];
 
-  if (self.tableView.contentSize.height > (CGRectGetHeight(self.view.bounds) / 2)) {
+  if (self.tableView.contentSize.height > (CGRectGetHeight(self.view.bounds) * 0.8)) {
     self.mdc_bottomSheetPresentationController.preferredSheetHeight = [self openingSheetHeight];
   } else {
     self.mdc_bottomSheetPresentationController.preferredSheetHeight = 0;
@@ -255,7 +255,7 @@ static NSString *const kMaterialActionSheetBundle = @"MaterialActionSheet.bundle
   // If there are too many options to fit on half of the screen then show as many options as
   // possible minus half a cell, to allow for bleeding and signal to the user that the sheet is
   // scrollable content.
-  CGFloat maxHeight = CGRectGetHeight(self.view.bounds) / 2;
+  CGFloat maxHeight = CGRectGetHeight(self.view.bounds) * 0.8;
   CGFloat headerHeight = [self.header sizeThatFits:CGRectStandardize(self.view.bounds).size].height;
   CGFloat cellHeight = self.tableView.contentSize.height / (CGFloat)_actions.count;
   CGFloat maxTableHeight = maxHeight - headerHeight;

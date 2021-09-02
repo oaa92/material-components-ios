@@ -228,7 +228,7 @@ static UIScrollView *MDCBottomSheetGetPrimaryScrollView(UIViewController *viewCo
   }
 
   if (MDCCGFloatEqual(preferredSheetHeight, 0)) {
-    preferredSheetHeight = round(CGRectGetHeight(self.sheetView.frame) / 2);
+    preferredSheetHeight = round(CGRectGetHeight(self.sheetView.frame) * 0.8);
   }
   self.sheetView.preferredSheetHeight = preferredSheetHeight;
 }
